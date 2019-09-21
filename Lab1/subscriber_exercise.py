@@ -41,7 +41,7 @@ def listener():
 
     # Create a node 'ros_node_subscriber' with param anonymous=True
     ### START CODE HERE ###
-
+	rospy.init_node('listener',anonymous=True)
 	### END CODE HERE ###
 
     # In ROS, nodes are uniquely named. If two nodes with the same
@@ -53,11 +53,11 @@ def listener():
     # Create a subscriber to subscribe to the 'sensor_reading' topic
     # It should call function 'callback' on getting a message from the topic
     ### START CODE HERE ###
-
+	rospy.Subscriber('sensor_reading',String,callback)
 	### END CODE HERE ###
 
     # spin() simply keeps python from exiting until this node is stopped
-    rospy.spin()
+    	rospy.spin()
 
 if __name__ == '__main__':
     try:
